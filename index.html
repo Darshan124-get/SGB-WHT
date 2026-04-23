@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WhatsApp Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container" class="app-container">
+        <!-- Sidebar: Customer List -->
+        <aside id="sidebar" class="sidebar">
+            <header class="sidebar-header">
+                <h1>Conversations</h1>
+            </header>
+            <div id="customer-list" class="customer-list">
+                <!-- Customers will be loaded here -->
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main id="chat-area" class="chat-area">
+            <!-- Welcome View (Desktop Only usually) -->
+            <div id="chat-welcome" class="chat-welcome">
+                <div class="welcome-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                    <h2>Select a customer to start chatting</h2>
+                    <p>Manage your leads and support requests in real-time.</p>
+                </div>
+            </div>
+
+            <!-- Active Chat Window -->
+            <div id="chat-window" class="chat-window hidden">
+                <header class="chat-header">
+                    <button id="mobile-back-btn" class="mobile-back-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>
+                    </button>
+                    <div id="active-avatar" class="avatar header-avatar"></div>
+                    <div class="customer-info">
+                        <h2 id="active-customer-name">User Name</h2>
+                        <span id="active-customer-phone">919019499667</span>
+                    </div>
+                </header>
+
+                <div id="message-container" class="message-container">
+                    <!-- Messages will be loaded here -->
+                </div>
+
+                <footer class="chat-footer">
+                    <div class="input-container">
+                        <button id="attach-btn" class="icon-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-2.48-2.02-4.5-4.5-4.5S7 2.52 7 5v12.5c0 3.31 2.69 6 6 6s6-2.69 6-6V6h-1.5z"></path></svg>
+                        </button>
+                        <button id="camera-btn" class="icon-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="3" fill="currentColor"></circle><path fill="currentColor" d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path></svg>
+                        </button>
+                        <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                        <input type="file" id="media-input" style="display: none;" accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                        <button id="send-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg>
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
